@@ -6,7 +6,9 @@ import java.util.InputMismatchException;
 public class Cybernetics implements FacultyFactory.Faculty {
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
-    ArrayList<String> subjectsListGroup = new ArrayList<>();
+    ArrayList<String> subjectsListGroup1 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup2 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup3 = new ArrayList<>();
 
 
     @Override
@@ -44,18 +46,18 @@ public class Cybernetics implements FacultyFactory.Faculty {
     public void setSubjectsListForGroups(int option) {
         switch(option) {
             case 1:  // Microelectronics
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("C++ Fundamentals");
-                subjectsListGroup.add("Microelectronic");
+                subjectsListGroup1.add("Mathematical analysis");
+                subjectsListGroup1.add("C++ Fundamentals");
+                subjectsListGroup1.add("Microelectronic");
                 break;
             case 2: // Management Systems
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("Management Systems");
-                subjectsListGroup.add("MathLab Fundamentals");
+                subjectsListGroup2.add("Mathematical analysis");
+                subjectsListGroup2.add("Management Systems");
+                subjectsListGroup2.add("MathLab Fundamentals");
                 break;
             case 3: //Metrology
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("Metrology and Certification");
+                subjectsListGroup3.add("Mathematical analysis");
+                subjectsListGroup3.add("Metrology and Certification");
                 break;
             default:
                 System.out.println("Try again.");
@@ -75,8 +77,18 @@ public class Cybernetics implements FacultyFactory.Faculty {
     }
 
     @Override
-    public ArrayList<String> getSubjectsListForGroup() {
-        return subjectsListGroup;
+    public ArrayList<String> getSubjectsListForGroup1() {
+        return subjectsListGroup1;
+    }
+
+    @Override
+    public ArrayList<String> getSubjectsListForGroup2() {
+        return subjectsListGroup2;
+    }
+
+    @Override
+    public ArrayList<String> getSubjectsListForGroup3() {
+        return subjectsListGroup3;
     }
 
 

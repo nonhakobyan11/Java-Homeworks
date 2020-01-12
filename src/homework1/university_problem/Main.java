@@ -50,7 +50,7 @@ public class Main {
 
         // Subjects of Group
         chosenFaculty.setSubjectsListForGroups(optionGroup);
-        ArrayList<String> subjectsOfChosenGroup = chosenFaculty.getSubjectsListForGroup();
+        ArrayList<String> subjectsOfChosenGroup = chosenFaculty.getSubjectsListForGroup1();
         System.out.println("\nBelow are mentioned all subjects that you are studying.");
         dekanat.printArray(subjectsOfChosenGroup);
 
@@ -63,22 +63,23 @@ public class Main {
         dekanat.calculateAverageMarkForOneStudent();
 
         // View more options that can interest you
-        studentsOfChosenGroup.clear();
-        subjectsOfChosenGroup.clear();
 
         while(true) {
             System.out.println("\nAlso you can get average grade of this subject for:");
-            System.out.println("1. All group\n2. All faculty\n3. All university\n\nEnter '4' if you want to exit program.");
+            System.out.println("1. All group\n2. All faculty\n3. All university\n4. If you want to exit program.");
             int optionAverage = scanner.nextInt();
             switch (optionAverage) {
                 case 1:
-                    dekanat.calculateAverageMarkForGroup(chosenFaculty, optionGroup, optionStudent);
+                    studentsOfChosenGroup.clear();
+                    dekanat.calculateAverageMarkForGroup(chosenFaculty, optionGroup);
                     break;
                 case 2:
-                    dekanat.calculateAverageMarkForFaculty(chosenFaculty, optionStudent);
+                    studentsOfChosenGroup.clear();
+                    dekanat.calculateAverageMarkForFaculty(chosenFaculty, subjectsOfChosenGroup.get(optionSubject - 1));
                     break;
                 case 3:
-                    dekanat.calculateAverageGradeForUniversity(factory.getFaculty(1), factory.getFaculty(2), optionStudent);
+                    studentsOfChosenGroup.clear();
+                    dekanat.calculateAverageGradeForUniversity(factory.getFaculty(1), factory.getFaculty(2), subjectsOfChosenGroup.get(optionSubject - 1));
                     break;
                 case 4:
                     System.out.println("We hope you are enjoying your study in our University.");

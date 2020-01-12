@@ -12,8 +12,10 @@ public class FacultyFactory {
         void setSubjectsListForGroups(int option);
         ArrayList<String> getArrayOfGroupsInTheFaculty();
         ArrayList<String> getStudentListGroup();
-        ArrayList<String> getSubjectsListForGroup();
-        
+        ArrayList<String> getSubjectsListForGroup1();
+        ArrayList<String> getSubjectsListForGroup2();
+        ArrayList<String> getSubjectsListForGroup3();
+
     }
 
     public Faculty getFaculty(int type) {

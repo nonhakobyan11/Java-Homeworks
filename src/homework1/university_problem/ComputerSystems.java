@@ -6,7 +6,9 @@ import java.util.InputMismatchException;
 public class ComputerSystems implements FacultyFactory.Faculty {
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
-    ArrayList<String> subjectsListGroup = new ArrayList<>();
+    ArrayList<String> subjectsListGroup1 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup2 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup3 = new ArrayList<>();
 
 
     @Override
@@ -43,21 +45,21 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     public void setSubjectsListForGroups(int option) {
         switch (option) {
             case 1: // Software Engineering
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("Java Core");
-                subjectsListGroup.add("Boolean Math");
-                subjectsListGroup.add("Algorithms Basics");
+                subjectsListGroup1.add("Mathematical analysis");
+                subjectsListGroup1.add("Java Core");
+                subjectsListGroup1.add("Boolean Math");
+                subjectsListGroup1.add("Algorithms Basics");
                 break;
             case 2: // Network Engineering
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("Basics of Networking");
-                subjectsListGroup.add("Network Security");
+                subjectsListGroup2.add("Mathematical analysis");
+                subjectsListGroup2.add("Basics of Networking");
+                subjectsListGroup2.add("Network Security");
                 break;
             case 3: // Information Security
-                subjectsListGroup.add("Mathematical analysis");
-                subjectsListGroup.add("Cryptography and Secrecy");
-                subjectsListGroup.add("Boolean Math");
-                subjectsListGroup.add("Network Security");
+                subjectsListGroup3.add("Mathematical analysis");
+                subjectsListGroup3.add("Cryptography and Secrecy");
+                subjectsListGroup3.add("Boolean Math");
+                subjectsListGroup3.add("Network Security");
                 break;
             default:
                 System.out.println("Try again.");
@@ -78,8 +80,18 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     }
 
     @Override
-    public ArrayList<String> getSubjectsListForGroup() {
-        return subjectsListGroup;
+    public ArrayList<String> getSubjectsListForGroup1() {
+        return subjectsListGroup1;
+    }
+
+    @Override
+    public ArrayList<String> getSubjectsListForGroup2() {
+        return subjectsListGroup2;
+    }
+
+    @Override
+    public ArrayList<String> getSubjectsListForGroup3() {
+        return subjectsListGroup3;
     }
 
 

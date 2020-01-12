@@ -12,6 +12,7 @@ public class Faculties {
         ArrayList<String> getArrayOfGroupsInTheFaculty();
         ArrayList<String> getStudentsListGroup1();
         ArrayList<String> getSubjectsԼistForGroup1();
+        
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Dekanat {
 
     double average = 0;
-    ArrayList<Double> gradesOfSubject = new ArrayList<>();
+    ArrayList<Double> marksOfSubject = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
     public void printArray(ArrayList<String> array) {
@@ -15,28 +15,28 @@ public class Dekanat {
         }
     }
 
-    public void setStudentsGradesForSubject() {
+    public void setStudentsMarksForSubject() {
         System.out.print("Enter first midterm result: ");
         double firstMidterm = scanner.nextDouble();
-        checkInputedGrade(firstMidterm);
+        checkInputedMark(firstMidterm);
         System.out.print("Enter second midterm result: ");
         double secondMidterm = scanner.nextDouble();
-        checkInputedGrade(secondMidterm);
+        checkInputedMark(secondMidterm);
         System.out.print("Enter exam result: ");
         double exam = scanner.nextDouble();
-        checkInputedGrade(exam);
+        checkInputedMark(exam);
     }
 
-    public void checkInputedGrade(double grade) {
-        if (grade >= 0 && grade <= 10) {
-            gradesOfSubject.add(grade);
+    public void checkInputedMark(double mark) {
+        if (mark >= 0 && mark <= 10) {
+            marksOfSubject.add(mark);
         } else {
-            throw new ArithmeticException("The grade should be more than 0 and less or equal 10.");
+            throw new ArithmeticException("The mark should be more than 0 and less or equal 10.");
         }
     }
 
     public ArrayList<Double> getStudentGradesOfSubject() {
-        return gradesOfSubject;
+        return marksOfSubject;
     }
 
     public double calculateAverageGrade(ArrayList<Double> grades){
@@ -49,20 +49,20 @@ public class Dekanat {
         return average;
     }
 
-    public void calculateAverageGradeForOneStudent(){
-        setStudentsGradesForSubject();
+    public void calculateAverageMarkForOneStudent(){
+        setStudentsMarksForSubject();
         ArrayList<Double> allGrades = getStudentGradesOfSubject();
         calculateAverageGrade(allGrades);
         System.out.println("Your average is: " + average);
     }
 
-    public void  calculateAverageGradeForGroup(FacultyFactory.Faculty faculty, int group, int student){
+    public void  calculateAverageMarkForGroup(FacultyFactory.Faculty faculty, int group, int student){
         faculty.setStudentListForGroups(group);
         ArrayList<String> allStudentsInGroup = faculty.getStudentListGroup();
         for (String i : allStudentsInGroup){
             if(i != allStudentsInGroup.get(student - 1)) {
                 System.out.println("Enter grades of " + i);
-                setStudentsGradesForSubject();
+                setStudentsMarksForSubject();
             }
         }
         ArrayList<Double> allGradesOfGroup = getStudentGradesOfSubject();
@@ -71,7 +71,7 @@ public class Dekanat {
     }
 
 
-    public void calculateAverageGradeForFaculty(FacultyFactory.Faculty faculty, int option){
+    public void calculateAverageMarkForFaculty(FacultyFactory.Faculty faculty, int option){
         faculty.setStudentListForGroups(1);
         faculty.setStudentListForGroups(2);
         faculty.setStudentListForGroups(3);
@@ -79,7 +79,7 @@ public class Dekanat {
         for (String i : allStudentsInFaculty){
             if(i != allStudentsInFaculty.get(option - 1)) {
                 System.out.println("Enter grades of " + i);
-                setStudentsGradesForSubject();
+                setStudentsMarksForSubject();
             }
         }
         ArrayList<Double> allGradesOfFaculty = getStudentGradesOfSubject();
@@ -104,11 +104,11 @@ public class Dekanat {
         for (String i : allStudentsInUniversity){
             if(i != allStudentsInUniversity.get(option - 1)) {
                 System.out.println("Enter grades of " + i);
-                setStudentsGradesForSubject();
+                setStudentsMarksForSubject();
             }
         }
-        ArrayList<Double> allGradesOfUniversity = getStudentGradesOfSubject();
-        calculateAverageGrade(allGradesOfUniversity);
+        ArrayList<Double> allMarksOfUniversity = getStudentGradesOfSubject();
+        calculateAverageGrade(allMarksOfUniversity);
         System.out.println("The average for the whole University is: " + average);
     }
 }

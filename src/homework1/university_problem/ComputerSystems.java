@@ -2,10 +2,8 @@ package homework1.university_problem;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class ComputerSystems implements FacultyFactory.Faculty {
-    Scanner scanner = new Scanner(System.in);
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
     ArrayList<String> subjectsListGroup = new ArrayList<>();
@@ -73,13 +71,14 @@ public class ComputerSystems implements FacultyFactory.Faculty {
         return groupNames;
     }
 
+
     @Override
     public ArrayList<String> getStudentListGroup() {
         return studentsListGroup;
     }
 
     @Override
-    public ArrayList<String> getSubjectsԼistForGroup() {
+    public ArrayList<String> getSubjectsListForGroup() {
         return subjectsListGroup;
     }
 

@@ -2,16 +2,16 @@ package homework1.university_problem;
 
 import java.util.ArrayList;
 
-public class Faculties {
+public class FacultyFactory {
 
     public interface Faculty{
 
         void setArrayOfGroupsInTheFaculty();
-        void setStudentListForGroups();
-        void setSubjectsListForGroups();
+        void setStudentListForGroups(int option);
+        void setSubjectsListForGroups(int option);
         ArrayList<String> getArrayOfGroupsInTheFaculty();
-        ArrayList<String> getStudentsListGroup1();
-        ArrayList<String> getSubjectsԼistForGroup1();
+        ArrayList<String> getStudentListGroup();
+        ArrayList<String> getSubjectsListForGroup();
         
     }
 

@@ -3,6 +3,8 @@ package homework1.university_problem;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
+import static java.lang.System.exit;
+
 public class ComputerSystems implements FacultyFactory.Faculty {
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
@@ -36,8 +38,12 @@ public class ComputerSystems implements FacultyFactory.Faculty {
                 studentsListGroup.add("Mkrtchyan Armen");
                 break;
             default:
-                System.out.println("Try again.");
-                throw new InputMismatchException("There is no group with this name in our Faculty");
+                try {
+                    throw new InputMismatchException();
+                } catch (InputMismatchException e) {
+                    System.out.println("Sorry. There is no group with this name in our Faculty.");
+                    exit(0);
+                }
         }
     }
 
@@ -62,8 +68,12 @@ public class ComputerSystems implements FacultyFactory.Faculty {
                 subjectsListGroup3.add("Network Security");
                 break;
             default:
-                System.out.println("Try again.");
-                throw new InputMismatchException("There is no subject with this name in our Faculty.");
+                try {
+                    throw new InputMismatchException();
+                } catch (InputMismatchException e) {
+                    System.out.println("Sorry. There is no subject with this name in our Faculty.");
+                    exit(0);
+                }
         }
     }
 

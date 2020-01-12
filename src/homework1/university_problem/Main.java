@@ -44,7 +44,12 @@ public class Main {
         dekanat.printArray(studentsOfChosenGroup);
         optionStudent = scanner.nextInt();
         if(optionStudent > studentsOfChosenGroup.size()) {
-            throw new IndexOutOfBoundsException("There is no student with this name in your Group.");
+            try {
+                throw new InputMismatchException();
+            } catch(InputMismatchException e){
+                System.out.println("Sorry. There is no student with this name in your Group.");
+                exit(0);
+            }
         }
         System.out.println("Hi, " + studentsOfChosenGroup.get(optionStudent - 1) + "!");
 
@@ -57,7 +62,12 @@ public class Main {
         System.out.println("\nSo, " + studentsOfChosenGroup.get(optionStudent - 1) + ", which subject's GPA do you want to know?");
         optionSubject = scanner.nextInt();
         if(optionSubject > subjectsOfChosenGroup.size()) {
-            throw new IndexOutOfBoundsException("There is no subject with this name in your Group.");
+            try {
+                throw new InputMismatchException();
+            } catch(InputMismatchException e){
+                System.out.println("Sorry. There is no subject with this name in your Group.");
+                exit(0);
+            }
         }
         System.out.println("Please, enter your grades from '" + subjectsOfChosenGroup.get(optionSubject - 1) + "' subject.");
         dekanat.calculateAverageMarkForOneStudent();
@@ -85,10 +95,13 @@ public class Main {
                     System.out.println("We hope you are enjoying your study in our University.");
                     exit(0);
                 default:
-                    System.out.println("Try again.");
-                    throw new InputMismatchException("There is no such option.");
+                    try {
+                        throw new InputMismatchException();
+                    } catch(InputMismatchException e){
+                        System.out.println("Sorry. There is no such option.");
+                        exit(0);
+                    }
             }
         }
-
     }
 }

@@ -3,6 +3,8 @@ package homework1.university_problem;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
+import static java.lang.System.exit;
+
 public class FacultyFactory {
 
     public interface Faculty{
@@ -28,10 +30,13 @@ public class FacultyFactory {
                 chosenFacultyObject = new Cybernetics();
                 break;
             default:
-                System.out.println("Try again.");
-                throw new InputMismatchException("There is no faculty with this name in our University");
+                try {
+                    throw new InputMismatchException();
+                } catch (InputMismatchException e) {
+                    System.out.println("Sorry. There is no faculty with this name in our University.");
+                    exit(0);
+                }
         }
         return chosenFacultyObject;
     }
-
 }

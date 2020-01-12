@@ -3,6 +3,8 @@ package homework1.university_problem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class Dekanat {
 
     double average = 0;
@@ -28,10 +30,15 @@ public class Dekanat {
     }
 
     public void checkInputedMark(double mark) {
-        if (mark >= 0 && mark <= 10) {
-            marksOfSubject.add(mark);
-        } else {
-            throw new ArithmeticException("The mark should be more than 0 and less or equal 10.");
+        try {
+            if (mark >= 0 && mark <= 10) {
+                marksOfSubject.add(mark);
+            } else {
+                throw new ArithmeticException();
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("The mark should be more than 0 and less or equal 10.");
+            exit(0);
         }
     }
 

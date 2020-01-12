@@ -69,13 +69,13 @@ public class Main {
                 exit(0);
             }
         }
-        System.out.println("Please, enter your grades from '" + subjectsOfChosenGroup.get(optionSubject - 1) + "' subject.");
+        System.out.println("Please, enter your marks from '" + subjectsOfChosenGroup.get(optionSubject - 1) + "' subject.");
         dekanat.calculateAverageMarkForOneStudent();
 
         // View more options that can interest you
 
         while(true) {
-            System.out.println("\nAlso you can get average grade of this subject for:");
+            System.out.println("\nAlso you can get average mark of this subject for:");
             System.out.println("1. All group\n2. All faculty\n3. All university\n4. If you want to exit program.");
             int optionAverage = scanner.nextInt();
             switch (optionAverage) {

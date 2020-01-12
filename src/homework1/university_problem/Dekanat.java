@@ -46,18 +46,18 @@ public class Dekanat {
         return marksOfSubject;
     }
 
-    public void calculateAverageMark(ArrayList<Double> grades){
+    public void calculateAverageMark(ArrayList<Double> marks){
         double sum = 0;
-        for (int i = 0; i < grades.size(); i++){
-            sum += grades.get(i);
+        for (int i = 0; i < marks.size(); i++){
+            sum += marks.get(i);
         }
-        average = sum / grades.size();
+        average = sum / marks.size();
     }
 
     public void calculateAverageMarkForOneStudent(){
         setStudentsMarksForSubject();
-        ArrayList<Double> allGrades = getStudentMarksOfSubject();
-        calculateAverageMark(allGrades);
+        ArrayList<Double> allMarks = getStudentMarksOfSubject();
+        calculateAverageMark(allMarks);
         System.out.println("Your average is: " + average);
     }
 
@@ -66,11 +66,11 @@ public class Dekanat {
         faculty.setStudentListForGroups(group);
         ArrayList<String> allStudentsInGroup = faculty.getStudentListGroup();
         for (String i : allStudentsInGroup){
-            System.out.println("Enter grades of " + i);
+            System.out.println("Enter marks of " + i);
             setStudentsMarksForSubject();
         }
-        ArrayList<Double> allGradesOfGroup = getStudentMarksOfSubject();
-        calculateAverageMark(allGradesOfGroup);
+        ArrayList<Double> allMarksOfGroup = getStudentMarksOfSubject();
+        calculateAverageMark(allMarksOfGroup);
         System.out.println("The average for the whole group is: " + average);
     }
 
@@ -84,8 +84,8 @@ public class Dekanat {
             System.out.println("Enter grades of " + i);
             setStudentsMarksForSubject();
         }
-        ArrayList<Double> allGradesOfFaculty = getStudentMarksOfSubject();
-        calculateAverageMark(allGradesOfFaculty);
+        ArrayList<Double> allMarksOfFaculty = getStudentMarksOfSubject();
+        calculateAverageMark(allMarksOfFaculty);
         System.out.println("The average for the whole Faculty is: " + average);
     }
 
@@ -95,8 +95,8 @@ public class Dekanat {
         checkWhetherOrNotStudentsStudyCurrentSubject(obj2, subject);
 
         ArrayList<String> allStudentsInUniversity = obj1.getStudentListGroup();
-        ArrayList<String> studentsOfSecondGroup = obj2.getStudentListGroup();
-        for (String i : studentsOfSecondGroup){
+        ArrayList<String> studentsOfSecondFaculty = obj2.getStudentListGroup();
+        for (String i : studentsOfSecondFaculty){
             allStudentsInUniversity.add(i);
         }
         for (String i : allStudentsInUniversity){

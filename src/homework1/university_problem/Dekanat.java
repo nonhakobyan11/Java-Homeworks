@@ -35,80 +35,87 @@ public class Dekanat {
         }
     }
 
-    public ArrayList<Double> getStudentGradesOfSubject() {
+    public ArrayList<Double> getStudentMarksOfSubject() {
         return marksOfSubject;
     }
 
-    public double calculateAverageGrade(ArrayList<Double> grades){
+    public void calculateAverageMark(ArrayList<Double> grades){
         double sum = 0;
-        average = 0;
         for (int i = 0; i < grades.size(); i++){
             sum += grades.get(i);
         }
         average = sum / grades.size();
-        return average;
     }
 
     public void calculateAverageMarkForOneStudent(){
         setStudentsMarksForSubject();
-        ArrayList<Double> allGrades = getStudentGradesOfSubject();
-        calculateAverageGrade(allGrades);
+        ArrayList<Double> allGrades = getStudentMarksOfSubject();
+        calculateAverageMark(allGrades);
         System.out.println("Your average is: " + average);
     }
 
-    public void  calculateAverageMarkForGroup(FacultyFactory.Faculty faculty, int group, int student){
+    public void  calculateAverageMarkForGroup(FacultyFactory.Faculty faculty, int group){
+        marksOfSubject.clear();
         faculty.setStudentListForGroups(group);
         ArrayList<String> allStudentsInGroup = faculty.getStudentListGroup();
         for (String i : allStudentsInGroup){
-            if(i != allStudentsInGroup.get(student - 1)) {
-                System.out.println("Enter grades of " + i);
-                setStudentsMarksForSubject();
-            }
+            System.out.println("Enter grades of " + i);
+            setStudentsMarksForSubject();
         }
-        ArrayList<Double> allGradesOfGroup = getStudentGradesOfSubject();
-        calculateAverageGrade(allGradesOfGroup);
+        ArrayList<Double> allGradesOfGroup = getStudentMarksOfSubject();
+        calculateAverageMark(allGradesOfGroup);
         System.out.println("The average for the whole group is: " + average);
     }
 
 
-    public void calculateAverageMarkForFaculty(FacultyFactory.Faculty faculty, int option){
-        faculty.setStudentListForGroups(1);
-        faculty.setStudentListForGroups(2);
-        faculty.setStudentListForGroups(3);
+    public void calculateAverageMarkForFaculty(FacultyFactory.Faculty faculty, String subject){
+        marksOfSubject.clear();
+        checkWhetherOrNotStudentsStudyCurrentSubject(faculty, subject);
         ArrayList<String> allStudentsInFaculty = faculty.getStudentListGroup();
+
         for (String i : allStudentsInFaculty){
-            if(i != allStudentsInFaculty.get(option - 1)) {
-                System.out.println("Enter grades of " + i);
-                setStudentsMarksForSubject();
-            }
+            System.out.println("Enter grades of " + i);
+            setStudentsMarksForSubject();
         }
-        ArrayList<Double> allGradesOfFaculty = getStudentGradesOfSubject();
-        calculateAverageGrade(allGradesOfFaculty);
+        ArrayList<Double> allGradesOfFaculty = getStudentMarksOfSubject();
+        calculateAverageMark(allGradesOfFaculty);
         System.out.println("The average for the whole Faculty is: " + average);
     }
 
-    protected void calculateAverageGradeForUniversity(FacultyFactory.Faculty obj1, FacultyFactory.Faculty obj2, int option){
-        obj1.setStudentListForGroups(1);
-        obj1.setStudentListForGroups(2);
-        obj1.setStudentListForGroups(3);
+    protected void calculateAverageGradeForUniversity(FacultyFactory.Faculty obj1, FacultyFactory.Faculty obj2, String subject){
+        marksOfSubject.clear();
+        checkWhetherOrNotStudentsStudyCurrentSubject(obj1, subject);
+        checkWhetherOrNotStudentsStudyCurrentSubject(obj2, subject);
 
-        obj2.setStudentListForGroups(1);
-        obj2.setStudentListForGroups(2);
-        obj2.setStudentListForGroups(3);
         ArrayList<String> allStudentsInUniversity = obj1.getStudentListGroup();
         ArrayList<String> studentsOfSecondGroup = obj2.getStudentListGroup();
         for (String i : studentsOfSecondGroup){
             allStudentsInUniversity.add(i);
         }
-
         for (String i : allStudentsInUniversity){
-            if(i != allStudentsInUniversity.get(option - 1)) {
-                System.out.println("Enter grades of " + i);
-                setStudentsMarksForSubject();
-            }
+            System.out.println("Enter grades of " + i);
+            setStudentsMarksForSubject();
         }
-        ArrayList<Double> allMarksOfUniversity = getStudentGradesOfSubject();
-        calculateAverageGrade(allMarksOfUniversity);
+        ArrayList<Double> allMarksOfUniversity = getStudentMarksOfSubject();
+        calculateAverageMark(allMarksOfUniversity);
         System.out.println("The average for the whole University is: " + average);
+    }
+
+    public void checkWhetherOrNotStudentsStudyCurrentSubject(FacultyFactory.Faculty faculty, String subject){
+        faculty.setSubjectsListForGroups(1);
+        faculty.setSubjectsListForGroups(2);
+        faculty.setSubjectsListForGroups(3);
+        ArrayList<String> group1 = faculty.getSubjectsListForGroup1();
+        ArrayList<String> group2 = faculty.getSubjectsListForGroup2();
+        ArrayList<String> group3 = faculty.getSubjectsListForGroup3();
+        if(group1.contains(subject)){
+            faculty.setStudentListForGroups(1);
+        }
+        if(group2.contains(subject)){
+            faculty.setStudentListForGroups(2);
+        }
+        if(group3.contains(subject)){
+            faculty.setStudentListForGroups(3);
+        }
     }
 }

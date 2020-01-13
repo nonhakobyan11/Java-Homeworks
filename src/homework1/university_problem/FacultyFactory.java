@@ -12,11 +12,14 @@ public class FacultyFactory {
         void setArrayOfGroupsInTheFaculty();
         void setStudentListForGroups(int option);
         void setSubjectsListForGroups(int option);
+        void setSubjectsForOneStudent(int quantity, int option);
         ArrayList<String> getArrayOfGroupsInTheFaculty();
         ArrayList<String> getStudentListGroup();
         ArrayList<String> getSubjectsListForGroup1();
         ArrayList<String> getSubjectsListForGroup2();
         ArrayList<String> getSubjectsListForGroup3();
+        ArrayList<String> getSubjectsForOneStudent();
+
 
     }
 

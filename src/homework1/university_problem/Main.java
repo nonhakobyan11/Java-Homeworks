@@ -56,8 +56,12 @@ public class Main {
         // Subjects of Group
         chosenFaculty.setSubjectsListForGroups(optionGroup);
         ArrayList<String> subjectsOfChosenGroup = chosenFaculty.getSubjectsListForGroup1();
-        System.out.println("\nBelow are mentioned all subjects that you are studying.");
+        System.out.println("\nBelow are mentioned all subjects of your group.");
         dekanat.printArray(subjectsOfChosenGroup);
+        System.out.println("\nHow many subjects do you study?");
+        int quantityOfSubjects = scanner.nextInt();
+        chosenFaculty.setSubjectsForOneStudent(quantityOfSubjects, );
+
 
         System.out.println("\nSo, " + studentsOfChosenGroup.get(optionStudent - 1) + ", which subject's GPA do you want to know?");
         optionSubject = scanner.nextInt();

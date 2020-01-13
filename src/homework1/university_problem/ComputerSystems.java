@@ -11,6 +11,7 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     ArrayList<String> subjectsListGroup1 = new ArrayList<>();
     ArrayList<String> subjectsListGroup2 = new ArrayList<>();
     ArrayList<String> subjectsListGroup3 = new ArrayList<>();
+    ArrayList<String> subjectsListForOneStudent = new ArrayList<>();
 
 
     @Override
@@ -52,9 +53,8 @@ public class ComputerSystems implements FacultyFactory.Faculty {
         switch (option) {
             case 1: // Software Engineering
                 subjectsListGroup1.add("Mathematical analysis");
-                subjectsListGroup1.add("Java Core");
                 subjectsListGroup1.add("Boolean Math");
-                subjectsListGroup1.add("Algorithms Basics");
+                subjectsListGroup1.add("Algorithms Basics. Java Core.");
                 break;
             case 2: // Network Engineering
                 subjectsListGroup2.add("Mathematical analysis");
@@ -62,7 +62,6 @@ public class ComputerSystems implements FacultyFactory.Faculty {
                 subjectsListGroup2.add("Network Security");
                 break;
             case 3: // Information Security
-                subjectsListGroup3.add("Mathematical analysis");
                 subjectsListGroup3.add("Cryptography and Secrecy");
                 subjectsListGroup3.add("Boolean Math");
                 subjectsListGroup3.add("Network Security");
@@ -77,6 +76,33 @@ public class ComputerSystems implements FacultyFactory.Faculty {
         }
     }
 
+
+    @Override
+    public void setSubjectsForOneStudent(int quantity, int option){ // qani hat ararka
+        for(int i = 0; i < quantity; i++) {
+            System.out.println("Enter the subject.");
+            int option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(1));
+                    break;
+                case 2:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(2));
+                    break;
+                case 3:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(3));
+                    break;
+                default:
+                    try {
+                        throw new InputMismatchException();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Sorry. You need to choose one of the Subjects mentioned above.");
+                        exit(0);
+                    }
+            }
+        }
+
+    }
 
     @Override
     public ArrayList<String> getArrayOfGroupsInTheFaculty() {
@@ -102,6 +128,11 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     @Override
     public ArrayList<String> getSubjectsListForGroup3() {
         return subjectsListGroup3;
+    }
+
+    @Override
+    public ArrayList<String> getSubjectsForOneStudent() {
+        return subjectsListForOneStudent;
     }
 
 

@@ -11,6 +11,7 @@ public class Cybernetics implements FacultyFactory.Faculty {
     ArrayList<String> subjectsListGroup1 = new ArrayList<>();
     ArrayList<String> subjectsListGroup2 = new ArrayList<>();
     ArrayList<String> subjectsListGroup3 = new ArrayList<>();
+    ArrayList<String> subjectsListForOneStudent = new ArrayList<>();
 
 
     @Override
@@ -47,7 +48,6 @@ public class Cybernetics implements FacultyFactory.Faculty {
         }
     }
 
-
     @Override
     public void setSubjectsListForGroups(int option) {
         switch(option) {
@@ -77,6 +77,33 @@ public class Cybernetics implements FacultyFactory.Faculty {
 
 
     @Override
+    public void setSubjectsForOneStudent(int quantity, int option){ // qani hat ararka
+        for(int i = 0; i < quantity; i++) {
+            System.out.println("Enter the subject.");
+            switch (option) {
+                case 1:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(1));
+                    break;
+                case 2:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(2));
+                    break;
+                case 3:
+                    subjectsListForOneStudent.add(subjectsListGroup1.get(3));
+                    break;
+                default:
+                    try {
+                        throw new InputMismatchException();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Sorry. You need to choose one of the Subjects mentioned above.");
+                        exit(0);
+                    }
+            }
+        }
+
+    }
+
+
+    @Override
     public ArrayList<String> getArrayOfGroupsInTheFaculty() {
         return groupNames;
     }
@@ -100,5 +127,11 @@ public class Cybernetics implements FacultyFactory.Faculty {
     public ArrayList<String> getSubjectsListForGroup3() {
         return subjectsListGroup3;
     }
+
+    @Override
+    public ArrayList<String> getSubjectsForOneStudent() {
+        return subjectsListForOneStudent;
+    }
+
 
 }

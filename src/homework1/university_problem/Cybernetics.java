@@ -2,15 +2,14 @@ package homework1.university_problem;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 import static java.lang.System.exit;
 
 public class Cybernetics implements FacultyFactory.Faculty {
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
-    ArrayList<String> subjectsListGroup1 = new ArrayList<>();
-    ArrayList<String> subjectsListGroup2 = new ArrayList<>();
-    ArrayList<String> subjectsListGroup3 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup = new ArrayList<>();
     ArrayList<String> subjectsListForOneStudent = new ArrayList<>();
 
 
@@ -52,18 +51,19 @@ public class Cybernetics implements FacultyFactory.Faculty {
     public void setSubjectsListForGroups(int option) {
         switch(option) {
             case 1:  // Microelectronics
-                subjectsListGroup1.add("Mathematical analysis");
-                subjectsListGroup1.add("C++ Fundamentals");
-                subjectsListGroup1.add("Microelectronic");
+                subjectsListGroup.add("Mathematical analysis");
+                subjectsListGroup.add("C++ Fundamentals");
+                subjectsListGroup.add("Microelectronic");
                 break;
             case 2: // Management Systems
-                subjectsListGroup2.add("Mathematical analysis");
-                subjectsListGroup2.add("Management Systems");
-                subjectsListGroup2.add("MathLab Fundamentals");
+                subjectsListGroup.add("Mathematical analysis");
+                subjectsListGroup.add("Management Systems");
+                subjectsListGroup.add("MathLab Fundamentals");
                 break;
             case 3: //Metrology
-                subjectsListGroup3.add("Mathematical analysis");
-                subjectsListGroup3.add("Metrology and Certification");
+                subjectsListGroup.add("Mathematical analysis");
+                subjectsListGroup.add("Metrology and Certification");
+                subjectsListGroup.add("C++ Fundamentals");
                 break;
             default:
                 try {
@@ -77,18 +77,20 @@ public class Cybernetics implements FacultyFactory.Faculty {
 
 
     @Override
-    public void setSubjectsForOneStudent(int quantity, int option){ // qani hat ararka
+    public void setSubjectsForOneStudent(int quantity){ // qani hat ararka
+        Scanner scanner = new Scanner(System.in);
         for(int i = 0; i < quantity; i++) {
             System.out.println("Enter the subject.");
+            int option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(1));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(0));
                     break;
                 case 2:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(2));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(1));
                     break;
                 case 3:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(3));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(2));
                     break;
                 default:
                     try {
@@ -114,18 +116,8 @@ public class Cybernetics implements FacultyFactory.Faculty {
     }
 
     @Override
-    public ArrayList<String> getSubjectsListForGroup1() {
-        return subjectsListGroup1;
-    }
-
-    @Override
-    public ArrayList<String> getSubjectsListForGroup2() {
-        return subjectsListGroup2;
-    }
-
-    @Override
-    public ArrayList<String> getSubjectsListForGroup3() {
-        return subjectsListGroup3;
+    public ArrayList<String> getSubjectsListForGroup() {
+        return subjectsListGroup;
     }
 
     @Override

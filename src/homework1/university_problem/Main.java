@@ -55,33 +55,37 @@ public class Main {
 
         // Subjects of Group
         chosenFaculty.setSubjectsListForGroups(optionGroup);
-        ArrayList<String> subjectsOfChosenGroup = chosenFaculty.getSubjectsListForGroup1();
+        ArrayList<String> subjectsOfChosenGroup = chosenFaculty.getSubjectsListForGroup();
         System.out.println("\nBelow are mentioned all subjects of your group.");
         dekanat.printArray(subjectsOfChosenGroup);
         System.out.println("\nHow many subjects do you study?");
         int quantityOfSubjects = scanner.nextInt();
-        chosenFaculty.setSubjectsForOneStudent(quantityOfSubjects, );
-
-
-        System.out.println("\nSo, " + studentsOfChosenGroup.get(optionStudent - 1) + ", which subject's GPA do you want to know?");
-        optionSubject = scanner.nextInt();
-        if(optionSubject > subjectsOfChosenGroup.size()) {
+        if(quantityOfSubjects == 1 || quantityOfSubjects == 2 || quantityOfSubjects == 3) {
+            chosenFaculty.setSubjectsForOneStudent(quantityOfSubjects);
+        }else {
             try {
                 throw new InputMismatchException();
             } catch(InputMismatchException e){
-                System.out.println("Sorry. There is no subject with this name in your Group.");
+                System.out.println("Sorry. You need to choose subject from the list.");
                 exit(0);
             }
         }
-        System.out.println("Please, enter your marks from '" + subjectsOfChosenGroup.get(optionSubject - 1) + "' subject.");
-        dekanat.calculateAverageMarkForOneStudent();
+
+        ArrayList<String> subjectsOfCurrentStudent = chosenFaculty.getSubjectsForOneStudent();
+        for(int i = 0; i < subjectsOfCurrentStudent.size(); i++){
+            System.out.println("Please, enter your marks from '" + subjectsOfCurrentStudent.get(i) + "' subject.");
+            dekanat.calculateAverageMarkForOneStudent();
+        }
+
 
         // View more options that can interest you
 
         while(true) {
-            System.out.println("\nAlso you can get average mark of this subject for:");
+            System.out.println("\nAlso you can get average mark for:");
             System.out.println("1. All group\n2. All faculty\n3. All university\n4. If you want to exit program.");
             int optionAverage = scanner.nextInt();
+            System.out.println("Which subject's average do you want to know?");
+            optionSubject = scanner.nextInt();
             switch (optionAverage) {
                 case 1:
                     studentsOfChosenGroup.clear();
@@ -89,11 +93,11 @@ public class Main {
                     break;
                 case 2:
                     studentsOfChosenGroup.clear();
-                    dekanat.calculateAverageMarkForFaculty(chosenFaculty, subjectsOfChosenGroup.get(optionSubject - 1));
+                    dekanat.calculateAverageMarkForFaculty(chosenFaculty);
                     break;
                 case 3:
                     studentsOfChosenGroup.clear();
-                    dekanat.calculateAverageGradeForUniversity(factory.getFaculty(1), factory.getFaculty(2), subjectsOfChosenGroup.get(optionSubject - 1));
+                    dekanat.calculateAverageGradeForUniversity(factory.getFaculty(1), factory.getFaculty(2));
                     break;
                 case 4:
                     System.out.println("We hope you are enjoying your study in our University.");

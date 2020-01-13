@@ -55,6 +55,7 @@ public class Dekanat {
     }
 
     public void calculateAverageMarkForOneStudent(){
+        marksOfSubject.clear();
         setStudentsMarksForSubject();
         ArrayList<Double> allMarks = getStudentMarksOfSubject();
         calculateAverageMark(allMarks);
@@ -65,64 +66,62 @@ public class Dekanat {
         marksOfSubject.clear();
         faculty.setStudentListForGroups(group);
         ArrayList<String> allStudentsInGroup = faculty.getStudentListGroup();
-        for (String i : allStudentsInGroup){
-            System.out.println("Enter marks of " + i);
-            setStudentsMarksForSubject();
-        }
+        setAllMarks(allStudentsInGroup);
         ArrayList<Double> allMarksOfGroup = getStudentMarksOfSubject();
         calculateAverageMark(allMarksOfGroup);
         System.out.println("The average for the whole group is: " + average);
     }
 
 
-    public void calculateAverageMarkForFaculty(FacultyFactory.Faculty faculty, String subject){
+    public void calculateAverageMarkForFaculty(FacultyFactory.Faculty faculty){
         marksOfSubject.clear();
-        checkWhetherOrNotStudentsStudyCurrentSubject(faculty, subject);
+        faculty.setStudentListForGroups(1);
+        faculty.setStudentListForGroups(2);
+        faculty.setStudentListForGroups(3);
         ArrayList<String> allStudentsInFaculty = faculty.getStudentListGroup();
-
-        for (String i : allStudentsInFaculty){
-            System.out.println("Enter grades of " + i);
-            setStudentsMarksForSubject();
-        }
+        setAllMarks(allStudentsInFaculty);
         ArrayList<Double> allMarksOfFaculty = getStudentMarksOfSubject();
         calculateAverageMark(allMarksOfFaculty);
         System.out.println("The average for the whole Faculty is: " + average);
     }
 
-    protected void calculateAverageGradeForUniversity(FacultyFactory.Faculty obj1, FacultyFactory.Faculty obj2, String subject){
+    public void calculateAverageGradeForUniversity(FacultyFactory.Faculty obj1, FacultyFactory.Faculty obj2){
         marksOfSubject.clear();
-        checkWhetherOrNotStudentsStudyCurrentSubject(obj1, subject);
-        checkWhetherOrNotStudentsStudyCurrentSubject(obj2, subject);
-
+        obj1.setStudentListForGroups(1);
+        obj1.setStudentListForGroups(2);
+        obj1.setStudentListForGroups(3);
         ArrayList<String> allStudentsInUniversity = obj1.getStudentListGroup();
+        obj2.setStudentListForGroups(1);
+        obj2.setStudentListForGroups(2);
+        obj2.setStudentListForGroups(3);
         ArrayList<String> studentsOfSecondFaculty = obj2.getStudentListGroup();
         for (String i : studentsOfSecondFaculty){
             allStudentsInUniversity.add(i);
         }
-        for (String i : allStudentsInUniversity){
-            System.out.println("Enter grades of " + i);
-            setStudentsMarksForSubject();
-        }
+        setAllMarks(allStudentsInUniversity);
         ArrayList<Double> allMarksOfUniversity = getStudentMarksOfSubject();
         calculateAverageMark(allMarksOfUniversity);
         System.out.println("The average for the whole University is: " + average);
     }
 
-    public void checkWhetherOrNotStudentsStudyCurrentSubject(FacultyFactory.Faculty faculty, String subject){
-        faculty.setSubjectsListForGroups(1);
-        faculty.setSubjectsListForGroups(2);
-        faculty.setSubjectsListForGroups(3);
-        ArrayList<String> group1 = faculty.getSubjectsListForGroup1();
-        ArrayList<String> group2 = faculty.getSubjectsListForGroup2();
-        ArrayList<String> group3 = faculty.getSubjectsListForGroup3();
-        if(group1.contains(subject)){
-            faculty.setStudentListForGroups(1);
+    public void setAllMarks(ArrayList<String> allStudents){
+        for (String i : allStudents){
+            System.out.println("Does " + i + " studies this lesson? (y/n)");
+            String option = scanner.next();
+            switch(option) {
+                case ("y"):
+                    System.out.println("Enter marks of " + i);
+                    setStudentsMarksForSubject();
+                    break;
+                case ("n"):
+                    break;
+                default:
+                    System.out.println("Wrong Input!");
+                    System.out.println("Automatically sets as 'no'");
+                    break;
+            }
         }
-        if(group2.contains(subject)){
-            faculty.setStudentListForGroups(2);
-        }
-        if(group3.contains(subject)){
-            faculty.setStudentListForGroups(3);
-        }
+
     }
+
 }

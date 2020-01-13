@@ -2,15 +2,15 @@ package homework1.university_problem;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 import static java.lang.System.exit;
 
 public class ComputerSystems implements FacultyFactory.Faculty {
     ArrayList<String> groupNames = new ArrayList<>();
     ArrayList<String> studentsListGroup = new ArrayList<>();
-    ArrayList<String> subjectsListGroup1 = new ArrayList<>();
-    ArrayList<String> subjectsListGroup2 = new ArrayList<>();
-    ArrayList<String> subjectsListGroup3 = new ArrayList<>();
+    ArrayList<String> subjectsListGroup = new ArrayList<>();
+
     ArrayList<String> subjectsListForOneStudent = new ArrayList<>();
 
 
@@ -52,19 +52,19 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     public void setSubjectsListForGroups(int option) {
         switch (option) {
             case 1: // Software Engineering
-                subjectsListGroup1.add("Mathematical analysis");
-                subjectsListGroup1.add("Boolean Math");
-                subjectsListGroup1.add("Algorithms Basics. Java Core.");
+                subjectsListGroup.add("Mathematical analysis");
+                subjectsListGroup.add("Boolean Math");
+                subjectsListGroup.add("Algorithms Basics. Java Core.");
                 break;
             case 2: // Network Engineering
-                subjectsListGroup2.add("Mathematical analysis");
-                subjectsListGroup2.add("Basics of Networking");
-                subjectsListGroup2.add("Network Security");
+                subjectsListGroup.add("Mathematical analysis");
+                subjectsListGroup.add("Basics of Networking");
+                subjectsListGroup.add("Network Security");
                 break;
             case 3: // Information Security
-                subjectsListGroup3.add("Cryptography and Secrecy");
-                subjectsListGroup3.add("Boolean Math");
-                subjectsListGroup3.add("Network Security");
+                subjectsListGroup.add("Cryptography and Secrecy");
+                subjectsListGroup.add("Boolean Math");
+                subjectsListGroup.add("Network Security");
                 break;
             default:
                 try {
@@ -78,19 +78,20 @@ public class ComputerSystems implements FacultyFactory.Faculty {
 
 
     @Override
-    public void setSubjectsForOneStudent(int quantity, int option){ // qani hat ararka
+    public void setSubjectsForOneStudent(int quantity){ // qani hat ararka
+        Scanner scanner = new Scanner(System.in);
         for(int i = 0; i < quantity; i++) {
             System.out.println("Enter the subject.");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(1));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(0));
                     break;
                 case 2:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(2));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(1));
                     break;
                 case 3:
-                    subjectsListForOneStudent.add(subjectsListGroup1.get(3));
+                    subjectsListForOneStudent.add(subjectsListGroup.get(2));
                     break;
                 default:
                     try {
@@ -116,19 +117,10 @@ public class ComputerSystems implements FacultyFactory.Faculty {
     }
 
     @Override
-    public ArrayList<String> getSubjectsListForGroup1() {
-        return subjectsListGroup1;
+    public ArrayList<String> getSubjectsListForGroup() {
+        return subjectsListGroup;
     }
 
-    @Override
-    public ArrayList<String> getSubjectsListForGroup2() {
-        return subjectsListGroup2;
-    }
-
-    @Override
-    public ArrayList<String> getSubjectsListForGroup3() {
-        return subjectsListGroup3;
-    }
 
     @Override
     public ArrayList<String> getSubjectsForOneStudent() {

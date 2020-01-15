@@ -1,8 +1,7 @@
 package homework1.university_problem;
 
 public class Student {
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String email;
     private String universityName;
     private String facultyName;
@@ -10,8 +9,7 @@ public class Student {
     private Subject[] subjects;
 
     public Student(StudentBuilder builder) {
-        firstName = builder.firstName;
-        lastName = builder.lastName;
+        fullName = builder.fullName;
         email = builder.email;
         universityName = builder.universityName;
         facultyName = builder.facultyName;
@@ -20,7 +18,8 @@ public class Student {
 
     public void setSubjects(Subject[] subjects) {
         if (subjects.length == 0) {
-            throw new RuntimeException("Student has no subject");
+            System.out.println("You havn't added any subject to this Student.");
+            throw new RuntimeException();
         }
         this.subjects = subjects;
     }
@@ -29,12 +28,12 @@ public class Student {
         return subjects;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String email() {
+        return email;
     }
 
     public String getUniversityName() {
@@ -50,16 +49,14 @@ public class Student {
     }
 
     public static class StudentBuilder {
-        private String firstName;
-        private String lastName;
+        private String fullName;
         private String email;
         private String universityName;
         private String facultyName;
         private String groupName;
 
-        public StudentBuilder(String firstName, String lastName, String email, String universityName, String facultyName, String groupName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public StudentBuilder(String fullName, String email, String universityName, String facultyName, String groupName) {
+            this.fullName = fullName;
             this.email = email;
             this.universityName = universityName;
             this.facultyName = facultyName;

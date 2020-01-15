@@ -13,10 +13,10 @@ public class Group {
         return groupName;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(Student[] students)  {
         if (students.length == 0) {
-            System.out.println("You havn't added any faculties in University. Please fix it.");
-            throw new RuntimeException("Group has no students");
+            System.out.println("You havn't added any faculties in University.");
+            throw new RuntimeException();
         }
         this.students = students;
     }

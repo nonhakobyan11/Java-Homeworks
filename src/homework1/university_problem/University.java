@@ -4,7 +4,7 @@ public class University {
     private String universityName;
     private Faculty[] faculties;
 
-    public void setUniversityName(String universityName) {
+    public University(String universityName) {
         this.universityName = universityName;
     }
 
@@ -14,8 +14,8 @@ public class University {
 
     public void setFaculties(Faculty[] faculties) {
         if (faculties.length == 0) {
-            System.out.println("You havn't added any faculties in University. Please fix it.");
-            throw new RuntimeException("University has no faculties");
+            System.out.println("You havn't added any faculties in University.");
+            throw new RuntimeException();
         }
         this.faculties = faculties;
     }

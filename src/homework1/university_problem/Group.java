@@ -1,4 +1,4 @@
 package homework1.university_problem;
 
-public class Dekanat {
+public class Group {
 }

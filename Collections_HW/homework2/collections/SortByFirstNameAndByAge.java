@@ -33,7 +33,7 @@ public class SortByFirstNameAndByAge {
 
         Collections.sort(studentsList, new SortByName());
 
-        System.out.println("\nSorted by name in ascending order:");
+        System.out.println("\nSorted by first name in ascending order:");
         for (int i = 0; i < studentsList.size(); i++)
             System.out.println(i + 1 + ") " + studentsList.get(i));
 

@@ -1,6 +1,6 @@
 package homework2.collections;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String firstName;
     private String lastName;
     private int age;
@@ -28,5 +28,10 @@ public class Student {
         return "First Name: " + firstName +
                 ", Last Name: " + lastName +
                 ", Age: " + age;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.getLastName().compareTo(student.getLastName());
     }
 }

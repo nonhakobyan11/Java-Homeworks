@@ -2,12 +2,12 @@ package homework2.collections;
 
 import java.util.Iterator;
 
-public class DoublyLinkedList implements Iterable<Student>{
+public class DoublyLinkedList implements Iterable<Student> {
     private Node head;
     private Node tail;
     private int size;
 
-    private class Node {
+    private static class Node {
         Student student;
         Node next;
         Node prev;
@@ -18,8 +18,9 @@ public class DoublyLinkedList implements Iterable<Student>{
             this.prev = prev;
         }
     }
+
     // constructor to create a list
-    public DoublyLinkedList(){
+    public DoublyLinkedList() {
         head = null;
         tail = null;
         size = 0;
@@ -93,8 +94,9 @@ public class DoublyLinkedList implements Iterable<Student>{
     // implementing Iterable interface for using foreach
     @Override
     public Iterator<Student> iterator() {
-        return new Iterator<Student>() {
+        return new Iterator<>() {
             Node current = getHead();
+
             @Override
             public boolean hasNext() {
                 return current != null;

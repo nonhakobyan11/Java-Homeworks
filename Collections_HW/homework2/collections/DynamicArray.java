@@ -1,9 +1,7 @@
 package homework2.collections;
 
-import java.util.Arrays;
-
 public class DynamicArray {
-    private Student studentsArray[];
+    private Student[] studentsArray;
     private int size;
     private int capacity;
 
@@ -29,7 +27,7 @@ public class DynamicArray {
     public boolean remove(String firstName, String lastName) {
         boolean result = false;
         for (int index = 0; index < size; index++) {
-            if (studentsArray[index].getFirstName() == firstName && studentsArray[index].getLastName() == lastName) {
+            if (studentsArray[index].getFirstName().equals(firstName) && studentsArray[index].getLastName().equals(lastName)) {
                 for (int i = index; i < size - 1; i++) {
                     studentsArray[i] = studentsArray[i + 1];
                 }
@@ -42,7 +40,7 @@ public class DynamicArray {
     }
 
     public void ensureCapacity() {
-        Student temp[] = new Student[capacity * 2];
+        Student[] temp = new Student[capacity * 2];
         for (int i = 0; i < capacity; i++) {
             temp[i] = studentsArray[i];
         }

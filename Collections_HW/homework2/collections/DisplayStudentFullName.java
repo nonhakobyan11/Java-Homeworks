@@ -42,7 +42,7 @@ public class DisplayStudentFullName {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         DisplayStudentFullName display = new DisplayStudentFullName();
         display.initialize();
         display.printStudentFullNames();

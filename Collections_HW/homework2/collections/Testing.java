@@ -1,7 +1,5 @@
 package homework2.collections;
 
-import java.util.Iterator;
-
 public class Testing {
     public static void printList(DoublyLinkedList list){
         System.out.println("\nHere are the elements of the list:");
@@ -10,7 +8,7 @@ public class Testing {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println("\nTesting Dynamic Array implementation\n");
         DynamicArray myStudentsArray = new DynamicArray();
         myStudentsArray.add(new Student("Hayk", "Karapetyan", 22));

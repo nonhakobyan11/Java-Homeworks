@@ -2,10 +2,11 @@ package homework2.collections;
 
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class SortByLastName {
     public static void main(String[] args) {
-        LinkedList<Student> studentsLinkedList = new LinkedList<Student>();
+        List<Student> studentsLinkedList = new LinkedList<>();
         studentsLinkedList.add(new Student("Nare", "Vardanyan", 17));
         studentsLinkedList.add(new Student("Aram", "Sahakyan", 18));
         studentsLinkedList.add(new Student("Nune", "Harutyunyan", 20));

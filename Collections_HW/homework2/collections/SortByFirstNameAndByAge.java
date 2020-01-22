@@ -3,6 +3,7 @@ package homework2.collections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 // This class sorts by First Name in ascending order
 class SortByName implements Comparator<Student> {
@@ -22,7 +23,7 @@ class SortByAge implements Comparator<Student> {
 
 public class SortByFirstNameAndByAge {
     public static void main(String[] args) {
-        ArrayList<Student> studentsList = new ArrayList<Student>();
+        List<Student> studentsList = new ArrayList<>();
         studentsList.add(new Student("Nare", "Vardanyan", 17));
         studentsList.add(new Student("Aram", "Sahakyan", 18));
         studentsList.add(new Student("Nune", "Harutyunyan", 20));

@@ -20,7 +20,7 @@ class SortByAge implements Comparator<Student> {
     }
 }
 
-public class SortByNameAndByAge {
+public class SortByFirstNameAndByAge {
     public static void main(String[] args) {
         ArrayList<Student> studentsList = new ArrayList<Student>();
         studentsList.add(new Student("Nare", "Vardanyan", 17));

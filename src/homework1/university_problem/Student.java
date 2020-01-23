@@ -63,17 +63,17 @@ public class Student {
             this.email = email;
         }
 
-        public StudentBuilder universityName(String universityName){
+        public StudentBuilder setUniversityName(String universityName){
             this.universityName = universityName;
             return this;
         }
 
-        public StudentBuilder facultyName(String facultyName){
+        public StudentBuilder setFacultyName(String facultyName){
             this.facultyName = facultyName;
             return this;
         }
 
-        public StudentBuilder groupName(String groupName){
+        public StudentBuilder setGroupName(String groupName){
             this.groupName = groupName;
             return this;
         }

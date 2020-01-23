@@ -35,68 +35,70 @@ public class Dekanat {
             cybernetics.setGroups(groupsOfCybernetics);
 
             // Adding Students to Software Engineering Group
-            Student softwareEngineeringStudent1 = new Student.StudentBuilder("Karapetyan Andranik", "karapetyanandranik@mail.ru",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup1.getGroupName())
+            Student softwareEngineeringStudent1 = new Student.StudentBuilder("Karapetyan Andranik", "karapetyanandranik@mail.ru")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup1.getGroupName())
                     .build();
-            Student softwareEngineeringStudent2 = new Student.StudentBuilder("Hovhannisyan Mariam", "hovhmariam@gmail.com",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup1.getGroupName())
+
+            Student softwareEngineeringStudent2 = new Student.StudentBuilder("Hovhannisyan Mariam", "hovhmariam@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup1.getGroupName())
                     .build();
-            Student softwareEngineeringStudent3 = new Student.StudentBuilder("Vardanyan Artak", "vardanyana@gmail.com",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup1.getGroupName())
+
+            Student softwareEngineeringStudent3 = new Student.StudentBuilder("Vardanyan Artak", "vardanyana@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup1.getGroupName())
                     .build();
             Student[] softwareEngineeringStudents = new Student[]{softwareEngineeringStudent1, softwareEngineeringStudent2, softwareEngineeringStudent3};
             computerScienceGroup1.setStudents(softwareEngineeringStudents);
 
 
             // Adding Students to Information Security Group
-            Student securityStudent1 = new Student.StudentBuilder("Harutyunyan Armine", "harutyunyan@mail.ru",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup2.getGroupName())
+            Student securityStudent1 = new Student.StudentBuilder("Harutyunyan Armine", "harutyunyan@mail.ru")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup2.getGroupName())
                     .build();
-            Student securityStudent2 = new Student.StudentBuilder("Mkrtchyan Armen", "armenmkrtchyan@gmail.com",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup2.getGroupName())
+            Student securityStudent2 = new Student.StudentBuilder("Mkrtchyan Armen", "armenmkrtchyan@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup2.getGroupName())
                     .build();
-            Student securityStudent3 = new Student.StudentBuilder("Vardanyan Artavazd", "vardanyanart@gmail.com",
-                    university.getUniversityName(),
-                    computerScience.getFacultyName(),
-                    computerScienceGroup2.getGroupName())
+            Student securityStudent3 = new Student.StudentBuilder("Vardanyan Artavazd", "vardanyanart@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(computerScience.getFacultyName())
+                    .setGroupName(computerScienceGroup2.getGroupName())
                     .build();
             Student[] securityStudents = new Student[]{securityStudent1, securityStudent2, securityStudent3};
             computerScienceGroup2.setStudents(securityStudents);
 
             // Adding Students to Microelectronics Group
-            Student microelectronicsStudent1 = new Student.StudentBuilder("Hovhannisyan Martin", "hovhmartin@mail.ru",
-                    university.getUniversityName(),
-                    cybernetics.getFacultyName(),
-                    cyberneticsGroup1.getGroupName())
+            Student microelectronicsStudent1 = new Student.StudentBuilder("Hovhannisyan Martin", "hovhmartin@mail.ru")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(cybernetics.getFacultyName())
+                    .setGroupName(cyberneticsGroup1.getGroupName())
                     .build();
-            Student microelectronicsStudent2 = new Student.StudentBuilder("Niazyan Vardan", "vardanniazyan@gmail.com",
-                    university.getUniversityName(),
-                    cybernetics.getFacultyName(),
-                    cyberneticsGroup1.getGroupName())
+            Student microelectronicsStudent2 = new Student.StudentBuilder("Niazyan Vardan", "vardanniazyan@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(cybernetics.getFacultyName())
+                    .setGroupName(cyberneticsGroup1.getGroupName())
                     .build();
             Student[] microelectronicsStudents = new Student[]{microelectronicsStudent1, microelectronicsStudent2};
             cyberneticsGroup1.setStudents(microelectronicsStudents);
 
             // Adding Students to Management Systems Group
-            Student managementSystemsStudent1 = new Student.StudentBuilder("Hambardzumyan Erik", "hovherik@gmail.com",
-                    university.getUniversityName(),
-                    cybernetics.getFacultyName(),
-                    cyberneticsGroup2.getGroupName())
+            Student managementSystemsStudent1 = new Student.StudentBuilder("Hambardzumyan Erik", "hovherik@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(cybernetics.getFacultyName())
+                    .setGroupName(cyberneticsGroup2.getGroupName())
                     .build();
-            Student managementSystemsStudent2 = new Student.StudentBuilder("Abrahamyan Kristine", "kristabrahamyan@gmail.com",
-                    university.getUniversityName(),
-                    cybernetics.getFacultyName(),
-                    cyberneticsGroup2.getGroupName())
+            Student managementSystemsStudent2 = new Student.StudentBuilder("Abrahamyan Kristine", "kristabrahamyan@gmail.com")
+                    .setUniversityName(university.getUniversityName())
+                    .setFacultyName(cybernetics.getFacultyName())
+                    .setGroupName(cyberneticsGroup2.getGroupName())
                     .build();
             Student[] managementSystemsStudents = new Student[]{managementSystemsStudent1, managementSystemsStudent2};
             cyberneticsGroup2.setStudents(managementSystemsStudents);

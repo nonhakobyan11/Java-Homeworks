@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SortByLastName {
+public class AscendingLastName {
     public static void main(String[] args) {
         List<Student> studentsLinkedList = new LinkedList<>();
         studentsLinkedList.add(new Student("Nare", "Vardanyan", 17));

@@ -188,7 +188,7 @@ public class Dekanat {
             }
 
         } catch (RuntimeException e) {
-            System.out.println("Something went wrong. Please follow the requirements.");
+            System.out.println(e.getMessage());
         }
     }
 

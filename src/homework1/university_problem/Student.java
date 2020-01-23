@@ -18,8 +18,7 @@ public class Student {
 
     public void setSubjects(Subject[] subjects) {
         if (subjects.length == 0) {
-            System.out.println("You havn't added any subject to this Student.");
-            throw new RuntimeException();
+            throw new RuntimeException("You havn't added any subject to this Student.");
         }
         this.subjects = subjects;
     }

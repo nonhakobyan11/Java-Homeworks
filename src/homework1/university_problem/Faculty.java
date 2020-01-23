@@ -14,8 +14,7 @@ public class Faculty {
 
     public void setGroups(Group[] groups) {
         if (groups.length == 0) {
-            System.out.println("You havn't added any Groups in Faculty.");
-            throw new RuntimeException();
+            throw new RuntimeException("You havn't added any Groups in Faculty.");
         }
         this.groups = groups;
     }

@@ -14,8 +14,7 @@ public class University {
 
     public void setFaculties(Faculty[] faculties) {
         if (faculties.length == 0) {
-            System.out.println("You havn't added any faculties in University.");
-            throw new RuntimeException();
+            throw new RuntimeException("You havn't added any faculties in University.");
         }
         this.faculties = faculties;
     }

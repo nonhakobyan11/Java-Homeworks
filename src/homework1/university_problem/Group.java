@@ -15,8 +15,7 @@ public class Group {
 
     public void setStudents(Student[] students)  {
         if (students.length == 0) {
-            System.out.println("You havn't added any faculties in University.");
-            throw new RuntimeException();
+            throw new RuntimeException("You havn't added any faculties in University.");
         }
         this.students = students;
     }

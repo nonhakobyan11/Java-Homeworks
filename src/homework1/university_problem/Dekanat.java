@@ -34,6 +34,9 @@ public class Dekanat {
             Group[] groupsOfCybernetics = new Group[]{cyberneticsGroup1, cyberneticsGroup2};
             cybernetics.setGroups(groupsOfCybernetics);
 
+            //Adding all groups existing in the University in new array
+            Group[] allGroupsInUni = new Group[]{computerScienceGroup1, computerScienceGroup2, cyberneticsGroup1, cyberneticsGroup2};
+
             // Adding Students to Software Engineering Group
             Student softwareEngineeringStudent1 = new Student.StudentBuilder("Karapetyan Andranik", "karapetyanandranik@mail.ru")
                     .setUniversityName(university.getUniversityName())
@@ -172,23 +175,12 @@ public class Dekanat {
 
             this.allStudentsInUni = new Student[quantityAllStudentsInUni];
             int position = 0;
-            for (Student i : softwareEngineeringStudents) {
-                allStudentsInUni[position] = i;
-                position++;
+            for (Group g : allGroupsInUni) {
+                for (Student s : g.getStudents()) {
+                    allStudentsInUni[position] = s;
+                    position++;
+                }
             }
-            for (Student i : securityStudents) {
-                allStudentsInUni[position] = i;
-                position++;
-            }
-            for (Student i : microelectronicsStudents) {
-                allStudentsInUni[position] = i;
-                position++;
-            }
-            for (Student i : managementSystemsStudents) {
-                allStudentsInUni[position] = i;
-                position++;
-            }
-
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }

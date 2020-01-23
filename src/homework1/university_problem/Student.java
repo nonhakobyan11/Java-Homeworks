@@ -32,7 +32,7 @@ public class Student {
         return fullName;
     }
 
-    public String email() {
+    public String getEmail() {
         return email;
     }
 
@@ -64,8 +64,7 @@ public class Student {
         }
 
         public Student build() {
-            Student student = new Student(this);
-            return student;
+            return new Student(this);
         }
     }
 }

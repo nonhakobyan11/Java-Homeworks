@@ -2,11 +2,6 @@ package homework1.university_problem;
 
 public class Dekanat {
     private Student[] allStudentsInUni;
-    private int quatityAllStudentsInUni;
-    private double averageGradeForUniversity;
-    private double averageGradeForFaculty;
-    private double averageGradeForGroup;
-    private double averageGradeForStudent;
     double sumOfAllGradesForStudent = 0;
     int sumOfSubjects = 0;
     double sumOfAllGradesOfOneSubjectInGroup = 0;
@@ -168,12 +163,12 @@ public class Dekanat {
             managementSystemsStudent2.setSubjects(subjectsOfManagementSystemsStudent2);
 
 
-            this.quatityAllStudentsInUni = softwareEngineeringStudents.length
+            int quantityAllStudentsInUni = softwareEngineeringStudents.length
                     + securityStudents.length
                     + microelectronicsStudents.length
                     + managementSystemsStudents.length;
 
-            this.allStudentsInUni = new Student[this.quatityAllStudentsInUni];
+            this.allStudentsInUni = new Student[quantityAllStudentsInUni];
             int position = 0;
             for (Student i : softwareEngineeringStudents) {
                 allStudentsInUni[position] = i;
@@ -199,61 +194,61 @@ public class Dekanat {
 
     public void calculateAverageGradeForUniversity(String subject) {
 
-        for (int i = 0; i < allStudentsInUni.length; i++) {
-            for (int j = 0; j < allStudentsInUni[i].getSubjects().length; j++) {
-                if (allStudentsInUni[i].getUniversityName().equals("NPUA")
-                        && allStudentsInUni[i].
+        for (Student student : allStudentsInUni) {
+            for (int j = 0; j < student.getSubjects().length; j++) {
+                if (student.getUniversityName().equals("NPUA")
+                        && student.
                         getSubjects()[j].getSubjectName().equals(subject)) {
-                    sumOfAllGradesOfOneSubjectInUni += allStudentsInUni[i].getSubjects()[j].getGrade();
+                    sumOfAllGradesOfOneSubjectInUni += student.getSubjects()[j].getGrade();
                     sumOfStudentsStudyingSameSubjectInUni++;
                 }
             }
         }
 
-        this.averageGradeForUniversity = sumOfAllGradesOfOneSubjectInUni / sumOfStudentsStudyingSameSubjectInUni;
-        System.out.println("University's average grade from '" + subject + "' is " + this.averageGradeForUniversity);
+        double averageGradeForUniversity = sumOfAllGradesOfOneSubjectInUni / sumOfStudentsStudyingSameSubjectInUni;
+        System.out.println("University's average grade from '" + subject + "' is " + averageGradeForUniversity);
     }
 
     public void calculateAverageGradeForFaculty(String faculty, String subject) {
 
-        for (int i = 0; i < allStudentsInUni.length; i++) {
-            for (int j = 0; j < allStudentsInUni[i].getSubjects().length; j++) {
-                if (allStudentsInUni[i].getFacultyName().equals(faculty)
-                        && allStudentsInUni[i].getSubjects()[j].getSubjectName().equals(subject)) {
-                    sumOfAllGradesOfOneSubjectInFaculty += allStudentsInUni[i].getSubjects()[j].getGrade();
+        for (Student student : allStudentsInUni) {
+            for (int j = 0; j < student.getSubjects().length; j++) {
+                if (student.getFacultyName().equals(faculty)
+                        && student.getSubjects()[j].getSubjectName().equals(subject)) {
+                    sumOfAllGradesOfOneSubjectInFaculty += student.getSubjects()[j].getGrade();
                     sumOfStudentsStudyingSameSubjectInFaculty++;
                 }
 
             }
         }
-        this.averageGradeForFaculty = sumOfAllGradesOfOneSubjectInFaculty / sumOfStudentsStudyingSameSubjectInFaculty;
-        System.out.println("Faculty's average grade from '" + subject + "' is: " + this.averageGradeForFaculty);
+        double averageGradeForFaculty = sumOfAllGradesOfOneSubjectInFaculty / sumOfStudentsStudyingSameSubjectInFaculty;
+        System.out.println("Faculty's average grade from '" + subject + "' is: " + averageGradeForFaculty);
     }
 
     public void calculateAverageGradeForGroup(String group, String subject) {
-        for (int i = 0; i < allStudentsInUni.length; i++) {
-            for (int j = 0; j < allStudentsInUni[i].getSubjects().length; j++) {
-                if (allStudentsInUni[i].getGroupName().equals(group)
-                        && allStudentsInUni[i].getSubjects()[j].getSubjectName().equals(subject)) {
-                    sumOfAllGradesOfOneSubjectInGroup += allStudentsInUni[i].getSubjects()[j].getGrade();
+        for (Student student : allStudentsInUni) {
+            for (int j = 0; j < student.getSubjects().length; j++) {
+                if (student.getGroupName().equals(group)
+                        && student.getSubjects()[j].getSubjectName().equals(subject)) {
+                    sumOfAllGradesOfOneSubjectInGroup += student.getSubjects()[j].getGrade();
                     sumOfStudentsStudyingSameSubjectInGroup++;
                 }
             }
         }
-        this.averageGradeForGroup = sumOfAllGradesOfOneSubjectInGroup / sumOfStudentsStudyingSameSubjectInGroup;
-        System.out.println("Groups's average grade from '" + subject + "' is: " + this.averageGradeForGroup);
+        double averageGradeForGroup = sumOfAllGradesOfOneSubjectInGroup / sumOfStudentsStudyingSameSubjectInGroup;
+        System.out.println("Groups's average grade from '" + subject + "' is: " + averageGradeForGroup);
     }
 
     public void calculateAverageForOneStudent(String fullname) {
-        for (int i = 0; i < allStudentsInUni.length; i++) {
-            if (allStudentsInUni[i].getFullName().equals(fullname)) {
-                for (int j = 0; j < allStudentsInUni[i].getSubjects().length; j++) {
-                    sumOfAllGradesForStudent = allStudentsInUni[i].getSubjects()[j].getGrade();
+        for (Student student : allStudentsInUni) {
+            if (student.getFullName().equals(fullname)) {
+                for (int j = 0; j < student.getSubjects().length; j++) {
+                    sumOfAllGradesForStudent = student.getSubjects()[j].getGrade();
                     sumOfSubjects++;
                 }
             }
         }
-        averageGradeForStudent = sumOfAllGradesForStudent / sumOfSubjects;
-        System.out.println("Current student's average grade is: " + this.averageGradeForStudent);
+        double averageGradeForStudent = sumOfAllGradesForStudent / sumOfSubjects;
+        System.out.println("Current student's average grade is: " + averageGradeForStudent);
     }
 }

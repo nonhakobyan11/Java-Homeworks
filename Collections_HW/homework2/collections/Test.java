@@ -1,6 +1,6 @@
 package homework2.collections;
 
-public class Testing {
+public class Test {
     public static void printList(DoublyLinkedList list){
         System.out.println("\nHere are the elements of the list:");
         for(Student s : list){

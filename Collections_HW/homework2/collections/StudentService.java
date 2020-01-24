@@ -1,6 +1,6 @@
 package homework2.collections;
 
-public class DisplayStudentFullName {
+public class StudentService {
     DynamicArray studentsArray = new DynamicArray();
     DoublyLinkedList studentsList = new DoublyLinkedList();
 
@@ -43,9 +43,9 @@ public class DisplayStudentFullName {
     }
 
     public static void main(String[] args) {
-        DisplayStudentFullName display = new DisplayStudentFullName();
-        display.initialize();
-        display.printStudentFullNames();
+        StudentService service = new StudentService();
+        service.initialize();
+        service.printStudentFullNames();
     }
 }
 

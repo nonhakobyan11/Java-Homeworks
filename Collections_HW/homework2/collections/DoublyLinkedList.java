@@ -43,6 +43,7 @@ public class DoublyLinkedList implements Iterable<Student> {
     public Student pop() {
         if (size == 0) {
             System.out.println("The list is empty. It's impossible to do this action now.");
+            return null;
         }
         Node oldHead = head;
         head = head.next;
@@ -70,6 +71,7 @@ public class DoublyLinkedList implements Iterable<Student> {
     public Student removeLast() {
         if (size == 0) {
             System.out.println("The list is empty. It's impossible to do this action now.");
+            return null;
         }
         Node oldTail = tail;
         tail = tail.prev;

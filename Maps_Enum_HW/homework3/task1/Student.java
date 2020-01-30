@@ -7,9 +7,9 @@ public class Student {
     private String lastName;
     private int age;
     private String phoneNumber;
-    private String facultyName;
+    private Faculty facultyName;
 
-    public Student(String firstName, String lastName, int age, String phoneNumber, String facultyName) {
+    public Student(String firstName, String lastName, int age, String phoneNumber, Faculty facultyName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -33,13 +33,13 @@ public class Student {
         return phoneNumber;
     }
 
-    public String getFacultyName() {
+    public Faculty getFacultyName() {
         return facultyName;
     }
 
     @Override
     public String toString() {
-        return this.firstName + " " + this.lastName + " -";
+        return this.firstName + " " + this.lastName;
     }
 
     @Override

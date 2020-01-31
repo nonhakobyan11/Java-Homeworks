@@ -2,6 +2,13 @@ package homework3.task2;
 
 public class Service {
 
+    public void traverseAndPrintAllMonthNames() {
+        System.out.println("Months of the year are:");
+        for (Month month : Month.values()) {
+            System.out.println(month);
+        }
+    }
+
     public String getDaysInMonth(Month month, int year) {
         if (month == Month.FEBRUARY && year % 4 == 0) {
             month.setFebruaryDays();

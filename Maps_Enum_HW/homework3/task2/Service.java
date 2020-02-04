@@ -10,10 +10,15 @@ public class Service {
         }
     }
 
-    public String getDaysInMonth(Month month, int year) {
+    public boolean checkLeapOrNot(int year){
         if (isLeap(year)){
-            month.setFebruaryDaysForLeapYear();
+            Month.FEBRUARY.setFebruaryDaysForLeapYear();
+            return true;
         }
+        return false;
+    }
+
+    public String getDaysInMonth(Month month) {
         return "\nThe number of days in " + month + " is " + month.getDays();
     }
 

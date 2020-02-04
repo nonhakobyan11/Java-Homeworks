@@ -6,8 +6,9 @@ public class Main {
         service.traverseAndPrintAllMonthNames();
         System.out.println();
         System.out.println(Month.APRIL + "'s holidays are " + Month.APRIL.getHolidays());
-        System.out.println(service.getDaysInMonth(Month.FEBRUARY, 2020));
-        System.out.println(service.getDaysInMonth(Month.MARCH, 2020));
+        service.checkLeapOrNot(2020);
+        System.out.println(service.getDaysInMonth(Month.FEBRUARY));
+        System.out.println(service.getDaysInMonth(Month.MARCH));
         System.out.println(service.getNumberOfHolidaysInMonth(Month.JANUARY));
         System.out.println(service.checkHolidayOrNot(Month.MARCH, 8));
         System.out.println(service.checkHolidayOrNot(Month.MARCH, 21));

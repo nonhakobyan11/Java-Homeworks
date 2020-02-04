@@ -28,7 +28,7 @@ public class Service {
     public String checkHolidayOrNot(Month month, int day){
         System.out.println("\nLet's see if " + month + " " + day + " is a holiday or not. ");
         if(day < 1 || day >= month.getDays()){
-            System.out.println("There is no such date in this month.");
+            return "There is no such date in this month." ;
         }
         return "It's " + month.getHolidays().contains(day) + "!";
     }

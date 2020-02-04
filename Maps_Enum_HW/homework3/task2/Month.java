@@ -26,7 +26,11 @@ public enum Month {
     }
 
     public ArrayList<Integer> getHolidays() {
-        return holidays;
+        if(holidays.isEmpty()){
+            return null;
+        } else {
+            return holidays;
+        }
     }
 
     public void setFebruaryDaysForLeapYear() {

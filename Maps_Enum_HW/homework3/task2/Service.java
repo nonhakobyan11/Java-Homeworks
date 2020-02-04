@@ -1,4 +1,5 @@
 package homework3.task2;
+import static java.time.Year.isLeap;
 
 public class Service {
 
@@ -10,8 +11,8 @@ public class Service {
     }
 
     public String getDaysInMonth(Month month, int year) {
-        if (month == Month.FEBRUARY && year % 4 == 0) {
-            month.setFebruaryDays();
+        if (isLeap(year)){
+            month.setFebruaryDaysForLeapYear();
         }
         return "\nThe number of days in " + month + " is " + month.getDays();
     }

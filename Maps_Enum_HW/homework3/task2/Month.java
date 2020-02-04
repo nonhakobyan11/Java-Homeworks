@@ -29,7 +29,7 @@ public enum Month {
         return holidays;
     }
 
-    public void setFebruaryDays() {
+    public void setFebruaryDaysForLeapYear() {
         days = 29;
     }
 

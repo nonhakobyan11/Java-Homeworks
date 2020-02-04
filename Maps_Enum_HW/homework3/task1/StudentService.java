@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StudentService {
-    private Map<Student, Integer> studentsMap = new HashMap<>();
-    private Map<Faculty, Integer> facultiesMap = new HashMap<>();
 
     public List<Student> initialize(){
         List<Student> students = new ArrayList<>();
@@ -22,6 +20,7 @@ public class StudentService {
 
     // key - student, value - countOfOccurrences
     public Map<Student, Integer> getStudentsMap(List<Student> students) {
+        Map<Student, Integer> studentsMap = new HashMap<>();
         for (Student s : students) {
             Integer countOfOccurrences = studentsMap.get(s);
             studentsMap.put(s, (countOfOccurrences == null) ? 1 : countOfOccurrences + 1);
@@ -37,6 +36,7 @@ public class StudentService {
     }
 
     public Map<Faculty, Integer> getFacultiesMap(List<Student> students) {
+        Map<Faculty, Integer> facultiesMap = new HashMap<>();
         for (Student s : students) {
             Integer studentsCountInFaculties = facultiesMap.get(s.getFacultyName());
             facultiesMap.put(s.getFacultyName(), (studentsCountInFaculties == null) ? 1 : studentsCountInFaculties + 1);

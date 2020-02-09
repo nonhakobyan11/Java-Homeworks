@@ -1,6 +1,6 @@
 package homework4.test;
 
-import homework4.model.MySortedSet;
+import homework4.set.MySortedSet;
 import homework4.model.Student;
 
 public class StudentSetTest {

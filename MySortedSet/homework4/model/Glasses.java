@@ -57,6 +57,15 @@ public class Glasses  implements Comparable<Glasses> {
     }
 
     /**
+     * hashCode() implementation by including all fields
+     * of the Glasses class so that it can produce different results for unequal objects
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(glassesFrameType, color, isOptical);
+    }
+
+    /**
      * Glasses objects are  compared by their frame types, than color,
      * than whether they are optical or not.
      * @param glasses the Glasses object, with which 'this' is going to be compared

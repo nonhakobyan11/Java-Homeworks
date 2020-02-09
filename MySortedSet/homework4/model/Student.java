@@ -64,6 +64,15 @@ public class Student implements Comparable<Student> {
     }
 
     /**
+     * hashCode() implementation by including all fields
+     * of the Student class so that it can produce different results for unequal objects
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName, firstName, age, facultyName);
+    }
+
+    /**
      * Student objects are compared by their first name, than last name,
      * than age, than faculty.
      * @param student Student object, with which 'this' is going to be compared

@@ -57,6 +57,15 @@ public class Coffee implements Comparable<Coffee>{
     }
 
     /**
+     * hashCode() implementation by including all fields
+     * of the Coffee class so that it can produce different results for unequal objects
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(coffeeType, sugarCubes);
+    }
+
+    /**
      * Coffee objects are  compared by their types, than sweetness
      * We consider that it doesn't matter coffee is hot or ice, it's still
      * coffee of the same type

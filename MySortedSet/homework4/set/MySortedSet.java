@@ -1,6 +1,4 @@
-package homework4.model;
-import homework4.exceptions.DuplicateElementException;
-import homework4.exceptions.ObjectNotFoundException;
+package homework4.set;
 
 /**
  * Custom implementation of a sorted set.
@@ -34,11 +32,12 @@ public class MySortedSet<T extends Comparable<T>> {
      *          and is true if object is added to the set successfully
      */
     public boolean add(T object) {
-        if(contains(object)){
-            throw new DuplicateElementException("The set already contains " + object);
+        if(!contains(object)){
+            myTree.add(object);
+            size++;
+            return true;
         }
-        size++;
-        return myTree.add(object);
+        return false;
     }
 
     /**
@@ -48,11 +47,12 @@ public class MySortedSet<T extends Comparable<T>> {
      * @return  A boolean specifier, which is false, if the object is not present in the set and is true otherwise
      */
     public boolean remove(T object) {
-        if (!contains(object)) {
-            throw new ObjectNotFoundException("There is no " + object + " in the set.");
+        if (contains(object)) {
+            myTree.remove(object);
+            size--;
+            return true;
         }
-        size--;
-        return myTree.remove(object);
+        return false;
     }
 
     /**

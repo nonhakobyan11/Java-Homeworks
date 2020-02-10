@@ -32,9 +32,7 @@ public class MySortedSet<T extends Comparable<T>> {
      *          and is true if object is added to the set successfully
      */
     public boolean add(T object) {
-        if (object == null){
-            throw new NullPointerException("Set doesn't allow nulls");
-        }
+        checkNullOrNot(object);
         if(!contains(object)){
             myTree.add(object);
             size++;
@@ -50,9 +48,7 @@ public class MySortedSet<T extends Comparable<T>> {
      * @return  A boolean specifier, which is false, if the object is not present in the set and is true otherwise
      */
     public boolean remove(T object) {
-        if (object == null){
-            throw new NullPointerException("Removed object can't be null");
-        }
+        checkNullOrNot(object);
         if (contains(object)) {
             myTree.remove(object);
             size--;
@@ -66,9 +62,7 @@ public class MySortedSet<T extends Comparable<T>> {
      * @return true if the specified object is found in the set and false otherwise
      */
     public boolean contains(T object) {
-        if (object == null){
-            throw new NullPointerException("Set doesn't contain any nulls");
-        }
+        checkNullOrNot(object);
         return myTree.isFound(object);
     }
 
@@ -88,6 +82,16 @@ public class MySortedSet<T extends Comparable<T>> {
         System.out.println("\nIn set is stored the following data:");
         myTree.print();
         System.out.println();
+    }
+
+    /**
+     * Check if object which is parameter of method is null or not.
+     * If true, throws NullPointerException
+     */
+    public void checkNullOrNot(T object){
+        if (object == null){
+            throw new NullPointerException("Removed object can't be null");
+        }
     }
 }
 

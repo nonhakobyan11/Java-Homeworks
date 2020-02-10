@@ -10,18 +10,14 @@ public class GlassesSetTest {
         Glasses g2 = new Glasses("Semi-full Frame", "red", false);
         Glasses g3 = new Glasses("Full Frame", "black", false);
 
-        try {
-            glassesSet.add(g1);
-            glassesSet.add(g2);
-            glassesSet.add(g3);
-            glassesSet.print();
-            System.out.println("Size of the set is: " + glassesSet.getSize());
-            System.out.println(glassesSet.contains(g3));
-            glassesSet.remove(g3);
-            glassesSet.print();
-            glassesSet.add(g2);
-        } catch (NullPointerException e) {
-            System.out.println("Set doesn't allow nulls");
-        }
+        glassesSet.add(g1);
+        glassesSet.add(g2);
+        glassesSet.add(g3);
+        glassesSet.print();
+        System.out.println("Size of the set is: " + glassesSet.getSize());
+        System.out.println(glassesSet.contains(g3));
+        glassesSet.remove(g3);
+        glassesSet.print();
+        glassesSet.add(g2);
     }
 }

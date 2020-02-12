@@ -2,33 +2,12 @@ package homework5.task2;
 
 import java.lang.Thread;
 
-//public class ThreadTest extends Thread {
-//    private User user;
-//
-//    public ThreadTest(User user) {
-//        this.user = user;
-//    }
-//
-//    @Override
-//    public void run() {
-//        try {
-//            for (int i = 0; i < 50; i++) {
-//                user.printName();
-//                user.setB(false);
-//                Thread.sleep(1000);
-//            }
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//}
-public class ThreadTest extends Thread {
+public class FirstThreadTest extends Thread {
 
     private User user;
     private String userName;
 
-    public ThreadTest(User user, String userName){
+    public FirstThreadTest(User user, String userName){
         this.user = user;
         this.userName = userName;
     }
@@ -45,7 +24,4 @@ public class ThreadTest extends Thread {
         }
     }
 
-    public String getUserName() {
-        return userName;
-    }
 }

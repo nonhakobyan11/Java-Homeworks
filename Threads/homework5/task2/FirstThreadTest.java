@@ -24,7 +24,4 @@ public class FirstThreadTest extends Thread {
         }
     }
 
-    public String getUserName() {
-        return userName;
-    }
 }

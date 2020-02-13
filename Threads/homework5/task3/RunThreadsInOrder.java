@@ -3,11 +3,12 @@ package homework5.task3;
 public class RunThreadsInOrder extends Thread {
 
     private static UserArray user;
-    int myThreadID;
-    static int threadAllowedToRun = 1;
+    private int myThreadID;
+    private static int autoIncrement = 1;
+    private static int threadAllowedToRun = 1;
 
-    public RunThreadsInOrder(int myThreadID, UserArray user) {
-        this.myThreadID = myThreadID;
+    public RunThreadsInOrder(UserArray user) {
+        this.myThreadID = autoIncrement++;
         this.user = user;
     }
 

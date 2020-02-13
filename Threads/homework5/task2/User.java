@@ -7,7 +7,9 @@ public class User {
             System.out.println(Thread.currentThread().getName() + " " + name);
             this.notify();
             this.wait();
-        }catch (InterruptedException e){}
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 

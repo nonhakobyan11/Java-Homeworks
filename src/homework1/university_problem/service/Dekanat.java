@@ -1,4 +1,6 @@
-package homework1.university_problem;
+package homework1.university_problem.service;
+
+import homework1.university_problem.structure.*;
 
 public class Dekanat {
     private Student[] allStudentsInUni;

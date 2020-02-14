@@ -1,4 +1,6 @@
-package homework2.collections;
+package homework2.collections.util;
+
+import homework2.collections.Student;
 
 import java.util.Iterator;
 

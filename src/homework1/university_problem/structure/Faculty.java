@@ -1,4 +1,4 @@
-package homework1.university_problem;
+package homework1.university_problem.structure;
 
 public class Faculty {
     private String facultyName;

@@ -1,5 +1,8 @@
 package homework2.collections;
 
+import homework2.collections.util.DoublyLinkedList;
+import homework2.collections.util.DynamicArray;
+
 public class StudentService {
     DynamicArray studentsArray = new DynamicArray();
     DoublyLinkedList studentsList = new DoublyLinkedList();

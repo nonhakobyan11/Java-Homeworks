@@ -1,5 +1,8 @@
 package homework2.collections;
 
+import homework2.collections.util.DoublyLinkedList;
+import homework2.collections.util.DynamicArray;
+
 public class Test {
     public static void printList(DoublyLinkedList list){
         System.out.println("\nHere are the elements of the list:");

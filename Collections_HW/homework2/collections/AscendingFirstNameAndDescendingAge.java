@@ -1,5 +1,8 @@
 package homework2.collections;
 
+import homework2.collections.comparator.AgeDescendingComparator;
+import homework2.collections.comparator.FirstNameAscendingComparator;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

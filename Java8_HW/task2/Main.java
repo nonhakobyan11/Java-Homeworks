@@ -7,11 +7,11 @@ import java.util.List;
 public class Main {
     public static List<Person> initialize(){
         List<Person> list = new ArrayList<>();
-        list.add(new Person("Anna", 22));
-        list.add(new Person("Armine", 25));
-        list.add(new Person("Vardan", 20));
-        list.add(new Person("Harut", 30));
-        list.add(new Person("Anahit", 27));
+        list.add(new Person("Anna", 22, "F"));
+        list.add(new Person("Arman", 15, "M"));
+        list.add(new Person("Vardan", 20, "M"));
+        list.add(new Person("Harut", 30, "M"));
+        list.add(new Person("Anahit", 27, "F"));
 
         return list;
     }

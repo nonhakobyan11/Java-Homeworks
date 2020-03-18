@@ -1,6 +1,6 @@
-package annotation;
+package learning_annotation.annotation;
 
-import java.util.Random;
+import learning_annotation.annotation.Timer;
 
 public class Bicycle {
     private String type;
@@ -51,7 +51,7 @@ public class Bicycle {
         while (speed > 0) {
             pressBreak();
         }
-        System.out.println(RED + "Bicycle stopped" + RESET);
+        System.out.println(RED + "learning_annotation.annotation.Bicycle stopped" + RESET);
     }
 
     public void pressBreak() {

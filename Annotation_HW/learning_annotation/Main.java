@@ -1,4 +1,7 @@
-package annotation;
+package learning_annotation.annotation;
+
+import learning_annotation.annotation.Bicycle;
+import learning_annotation.annotation.Timer;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

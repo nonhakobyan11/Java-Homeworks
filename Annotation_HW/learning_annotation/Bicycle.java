@@ -1,4 +1,4 @@
-package learning_annotation.annotation;
+package learning_annotation;
 
 import learning_annotation.annotation.Timer;
 
@@ -51,7 +51,7 @@ public class Bicycle {
         while (speed > 0) {
             pressBreak();
         }
-        System.out.println(RED + "learning_annotation.annotation.Bicycle stopped" + RESET);
+        System.out.println(RED + "\nBicycle stopped" + RESET);
     }
 
     public void pressBreak() {

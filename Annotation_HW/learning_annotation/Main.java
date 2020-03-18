@@ -1,6 +1,5 @@
-package learning_annotation.annotation;
+package learning_annotation;
 
-import learning_annotation.annotation.Bicycle;
 import learning_annotation.annotation.Timer;
 
 import java.lang.reflect.InvocationTargetException;
